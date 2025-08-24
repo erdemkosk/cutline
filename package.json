@@ -1,0 +1,65 @@
+{
+  "name": "cutline",
+  "version": "1.0.0",
+  "description": "A powerful Axios wrapper that adds automatic retry mechanism and circuit breaker functionality. 100% Axios compatible - just add retry and circuit breaker features to your existing Axios setup!",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "examples/**/*"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
+    "start": "node dist/index.js",
+    "watch": "nodemon --exec ts-node src/index.ts",
+    
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:unit": "jest tests/unit",
+    "test:integration": "jest tests/integration",
+    
+    "example": "ts-node examples/typescript/complete-example.ts",
+    "test:retry": "ts-node examples/typescript/retry-circuit-test.ts",
+    "example:js": "node examples/javascript/javascript-example.js",
+    "example:esm": "node examples/esm-example.mjs",
+    
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean",
+    "prepublishOnly": "npm run build && npm run test"
+  },
+  "keywords": ["http-client", "retry", "circuit-breaker", "api", "service-caller", "javascript", "typescript", "nodejs", "axios-wrapper"],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/cutline.git"
+  },
+  "homepage": "https://github.com/yourusername/cutline#readme",
+  "bugs": {
+    "url": "https://github.com/yourusername/cutline/issues"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/jest": "^29.0.0",
+    "axios": "^1.6.0",
+    "jest": "^29.0.0",
+    "nodemon": "^3.0.0",
+    "ts-jest": "^29.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  }
+}
